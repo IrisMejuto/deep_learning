@@ -172,6 +172,35 @@ def check_environment():
     
     return device
 
+
+# ============================================================================
+# MANEJO DE TENSORBOARD
+# ============================================================================
+
+def setup_tensorboard(log_dir):
+    """Configura TensorBoard para visualización"""
+    tb = program.TensorBoard()
+    tb.configure(argv=[None, '--logdir', log_dir])
+    url = tb.launch()
+    print(f"TensorBoard disponible en: {url}")
+    return tb
+
+# ============================================================================
+# PROCESAMIENTO DE IMÁGENES
+# ============================================================================
+
+def load_image_as_tensor(image_path, img_size=IMG_SIZE):
+    """Carga una imagen como tensor normalizado"""
+    transform = transforms.Compose([
+        transforms.Resize(img_size),
+        transforms.ToTensor(),
+        transforms.Normalize(mean=[0.485, 0.456, 0.406], 
+                         std=[0.229, 0.224, 0.225])
+    ])
+    
+    img = Image.open(image_path).convert('RGB')
+    return transform(img).unsqueeze(0)  # Añade dimensión batch
+
 # ============================================================================
 # CONFIGURACIÓN ESPECÍFICA DEL PROYECTO
 # ============================================================================
@@ -360,8 +389,9 @@ def initialize_project(use_colab: bool = True):
     # Configurar entorno
     device = check_environment()
     
-    # Configurar Google Drive si estamos en Colab
+    # Instalar dependencias si es Colab (nuevo)
     if use_colab:
+        install_requirements()
         setup_colab_drive()
         base_path = COLAB_PROJECT_PATH
     else:
