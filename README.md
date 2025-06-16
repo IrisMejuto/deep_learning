@@ -1,6 +1,8 @@
-# 🎯 Tourist POI Engagement Prediction with Deep Learning
+# deep_learning
+Deep learning model that predicts whether a tourist attraction is engaging based on images and metadata.
 
-[![Google Colab](https://img.shields.io/badge/Google%20Colab-F9AB00?style=flat&logo=googlecolab&logoColor=white)](https://colab.research.google.com/github/IrisMejuto/deep_learning/blob/main/notebooks/02_simplified_analysis.ipynb)
+
+# 🎯 Tourist POI Engagement Prediction with Deep Learning
 
 ## 📋 Description
 
@@ -10,11 +12,12 @@ Multimodal Deep Learning model that predicts engagement levels for tourist POIs 
 
 ### Step-by-step Instructions
 
-1. **Open Google Colab**: Go to [colab.research.google.com](https://colab.research.google.com)
+1. **Open Google Colab**: Go to 
+   [![Google Colab](https://img.shields.io/badge/Google%20Colab-F9AB00?style=flat&logo=googlecolab&logoColor=white)](https://colab.research.google.com/github/IrisMejuto/deep_learning/blob/main/notebooks/02_simplified_analysis.ipynb)
 
-2. **Create a new notebook**: Click on "New notebook"
+3. **Create a new notebook**: Click on "New notebook"
 
-3. **Paste this code** in the first cell:
+4. **Paste this code** in the first cell:
 
 ```python
 from google.colab import drive
@@ -184,10 +187,3 @@ The dataset contains **1,569 tourist POIs** with:
 
 *Dependencies are automatically installed in the notebook.*
 
-## 📞 Contact
-
-**Repository**: [https://github.com/IrisMejuto/deep_learning](https://github.com/IrisMejuto/deep_learning)
-
----
-
-**If you find this project useful, consider giving it a star on GitHub.**
