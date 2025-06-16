@@ -83,11 +83,14 @@ def setup_device():
     return device
 
 def setup_colab_drive():
-    """Monta Google Drive en Colab"""
+    """Monta Google Drive en Colab si es necesario"""
     try:
         from google.colab import drive
-        drive.mount('/content/drive')
-        print("Google Drive montado correctamente")
+        if not os.path.exists('/content/drive'):
+            drive.mount('/content/drive')
+            print("Google Drive montado correctamente")
+        else:
+            print("Google Drive ya estaba montado")
         return True
     except Exception as e:
         print(f"Error montando Google Drive: {e}")
@@ -109,7 +112,7 @@ def check_environment():
 
 # Constantes del proyecto
 PROJECT_CONFIG = {
-    'BASE_PATH': '/content/drive/MyDrive/ProyectoDL',
+    'BASE_PATH': os.getcwd(),
     'DATA_FILE': 'data/poi_dataset.csv',
     'IMG_SIZE': (224, 224),
     'BATCH_SIZE': 16,
@@ -549,8 +552,14 @@ def initialize_project():
     device = check_environment()
     setup_colab_drive()
     
-    base_path = PROJECT_CONFIG['BASE_PATH']
+    # Detectar y configurar la ruta base automáticamente
+    base_path = os.getcwd()
+    PROJECT_CONFIG['BASE_PATH'] = base_path
+    
     print(f"Proyecto inicializado en: {base_path}")
+    print(f"Estructura detectada:")
+    print(f"  - Datos: {os.path.exists(os.path.join(base_path, 'data'))}")
+    print(f"  - Notebook: {os.path.exists(os.path.join(base_path, 'notebooks'))}")
     
     return device, base_path
 
