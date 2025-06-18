@@ -2,7 +2,7 @@
 Deep learning model that predicts whether a tourist attraction is engaging based on images and metadata.
 
 
-# 🎯 Tourist POI Engagement Prediction with Deep Learning
+# 🎯 Tourist POI Engagement Prediction
 
 ## 📋 Description
 
