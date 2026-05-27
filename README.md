@@ -187,3 +187,12 @@ The dataset contains **1,569 tourist POIs** with:
 
 *Dependencies are automatically installed in the notebook.*
 
+![](https://komarev.com/ghpvc/?username=IrisMejuto-deep_learning)
+
+<p align="left">
+  <img src="https://komarev.com/ghpvc/?username=IrisMejuto-deep_learning&label=Repository%20Views&color=0e75b6&style=flat" alt="repository views" />
+</p>
+
+
+
+![Repository Views](https://komarev.com/ghpvc/?username=IrisMejuto-deep_learning&label=Repository%20Views&color=0e75b6&style=flat)
